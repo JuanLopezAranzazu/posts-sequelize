@@ -1,0 +1,59 @@
+GET http://localhost:3001/api/v1/users/1
+
+###
+
+GET http://localhost:3001/api/v1/users
+
+###
+
+POST http://localhost:3001/api/v1/users
+Content-Type: application/json
+
+{
+  "username": "juanlopez",
+  "password": "root123",
+  "role": "admin"
+}
+
+###
+
+POST http://localhost:3001/api/v1/auth
+Content-Type: application/json
+
+{
+  "username": "juanlopez",
+  "password": "root123"
+}
+
+### POSTS
+
+GET http://localhost:3001/api/v1/posts
+
+### 
+
+POST http://localhost:3001/api/v1/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJqdWFubG9wZXoiLCJpYXQiOjE2NzE5MjkzNTgsImV4cCI6MTY3MTkyOTY1OH0.LG-7ZT3qfH0rHMsSRduHIdCjPt8XISStrR9yu-ZBtt4
+Content-Type: application/json
+
+{
+  "title": "my title2",
+  "description": "description2"
+}
+
+###
+
+GET http://localhost:3001/api/v1/posts/date
+Content-Type: application/json
+
+{
+  "entryDates": [{"year": 2022, "date": 23}]
+}
+
+### EXPORTS
+
+GET http://localhost:3001/api/v1/exports
+Content-Type: application/json
+
+{
+  "entryDates": [{"year": 2022, "date": 23}]
+}
