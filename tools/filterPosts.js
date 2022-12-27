@@ -27,4 +27,10 @@ function getPostsByDates(posts, dates) {
   });
 }
 
-module.exports = { compareDates, getPostsByDates };
+function getPostsByUser(posts, entryArray = [1, 2, 3]) {
+  return posts.filter((item) => {
+    return entryArray.includes(item.user.id);
+  });
+}
+
+module.exports = { compareDates, getPostsByDates, getPostsByUser };

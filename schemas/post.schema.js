@@ -4,7 +4,12 @@ const id = Joi.number().integer();
 const title = Joi.string();
 const description = Joi.string();
 const userId = Joi.number().integer();
-const entryDates = Joi.array().items(Joi.number);
+// filter posts
+const item = Joi.number().integer();
+const entryDates = Joi.array().items(
+  Joi.object({ year: item, month: item, date: item })
+);
+const entryArray = Joi.array().items(item);
 
 const createPostSchema = Joi.object({
   title: title.required(),
@@ -22,9 +27,13 @@ const getPostSchema = Joi.object({
   id: id.required(),
 });
 
-// entry dates
+// filter posts
 const filterDateSchema = Joi.object({
   entryDates: entryDates.required(),
+});
+
+const filterUserSchema = Joi.object({
+  entryArray: entryArray.required(),
 });
 
 module.exports = {
@@ -32,4 +41,5 @@ module.exports = {
   updatePostSchema,
   getPostSchema,
   filterDateSchema,
+  filterUserSchema,
 };

@@ -57,3 +57,12 @@ Content-Type: application/json
 {
   "entryDates": [{"year": 2022, "date": 23}]
 }
+
+###
+
+GET http://localhost:3001/api/v1/exports/filter-user
+Content-Type: application/json
+
+{
+  "entryArray": [1, 2]
+}
