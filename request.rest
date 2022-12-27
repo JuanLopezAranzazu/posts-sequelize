@@ -10,7 +10,7 @@ POST http://localhost:3001/api/v1/users
 Content-Type: application/json
 
 {
-  "username": "juanlopez",
+  "username": "admin",
   "password": "root123",
   "role": "admin"
 }
@@ -21,7 +21,7 @@ POST http://localhost:3001/api/v1/auth
 Content-Type: application/json
 
 {
-  "username": "juanlopez",
+  "username": "admin",
   "password": "root123"
 }
 
@@ -32,12 +32,12 @@ GET http://localhost:3001/api/v1/posts
 ### 
 
 POST http://localhost:3001/api/v1/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJqdWFubG9wZXoiLCJpYXQiOjE2NzE5MjkzNTgsImV4cCI6MTY3MTkyOTY1OH0.LG-7ZT3qfH0rHMsSRduHIdCjPt8XISStrR9yu-ZBtt4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTY3MjE4MTQ5MCwiZXhwIjoxNjcyMTgyMDkwfQ.gKLib6kYdynS66z7IE4ZGMIJ48pFrChC5ZyJIyISid4
 Content-Type: application/json
 
 {
-  "title": "my title2",
-  "description": "description2"
+  "title": "test test",
+  "description": "test test"
 }
 
 ###
@@ -64,5 +64,6 @@ GET http://localhost:3001/api/v1/exports/filter-user
 Content-Type: application/json
 
 {
-  "entryArray": [1, 2]
+  "entryArray": [1, 2],
+  "columns": ["title", "description", "createdAt"]
 }
